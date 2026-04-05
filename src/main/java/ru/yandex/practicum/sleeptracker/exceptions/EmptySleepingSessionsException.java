@@ -1,6 +1,6 @@
 package ru.yandex.practicum.sleeptracker.exceptions;
 
-public class EmptySleepingSessionsException extends SleepTrackerSystemException{
+public class EmptySleepingSessionsException extends SleepTrackerSystemException {
     public EmptySleepingSessionsException(String message) {
         super(message);
     }
