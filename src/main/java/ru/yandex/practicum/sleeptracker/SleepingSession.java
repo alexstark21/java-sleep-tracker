@@ -3,34 +3,34 @@ package ru.yandex.practicum.sleeptracker;
 import java.time.LocalDateTime;
 
 public class SleepingSession {
-    LocalDateTime from;
-    LocalDateTime till;
-    String condition;
+    private final LocalDateTime start;
+    private final LocalDateTime end;
+    private final SleepQuality sleepQuality;
 
-    public SleepingSession(LocalDateTime from, LocalDateTime till, String condition) {
-        this.from = from;
-        this.till = till;
-        this.condition = condition;
+    public SleepingSession(LocalDateTime from, LocalDateTime till, SleepQuality sleepQuality) {
+        this.start = from;
+        this.end = till;
+        this.sleepQuality = sleepQuality;
     }
 
-    public LocalDateTime getFrom() {
-        return from;
+    public LocalDateTime getStart() {
+        return start;
     }
 
-    public LocalDateTime getTill() {
-        return till;
+    public LocalDateTime getEnd() {
+        return end;
     }
 
-    public String getCondition() {
-        return condition;
+    public SleepQuality getSleepQuality() {
+        return sleepQuality;
     }
 
     @Override
     public String toString() {
         return "SleepingSession{" +
-                "from=" + from +
-                ", till=" + till +
-                ", condition='" + condition + '\'' +
+                "from=" + start +
+                ", till=" + end +
+                ", sleepQuality='" + sleepQuality + '\'' +
                 '}';
     }
 }

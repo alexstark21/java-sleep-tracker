@@ -50,7 +50,7 @@ public class SleepingSessionsLoader {
         return new SleepingSession(
                 LocalDateTime.parse(split[0], FORMATTER),
                 LocalDateTime.parse(split[1], FORMATTER),
-                split[2]
+                SleepQuality.valueOf(split[2])
         );
     }
 }
