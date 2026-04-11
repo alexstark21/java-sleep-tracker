@@ -25,7 +25,8 @@ public class ChronotypeDetectorFunction implements Function<List<SleepingSession
                 .orElse(List.of())
                 .stream()
                 .filter(s -> s.getStart().toLocalDate().isBefore(s.getEnd().toLocalDate())
-                        || s.getStart().toLocalTime().isBefore(LocalTime.of(6, 0)))
+                        || (s.getStart().toLocalTime().isBefore(SleepLessNightsCounterFunction.NIGHT_END)
+                        && s.getEnd().toLocalTime().isAfter(LocalTime.MIDNIGHT)))
                 .map(this::mapToType)
                 .collect(Collectors.collectingAndThen(Collectors.groupingBy(Function.identity(), Collectors.counting()),
                         this::determineWinner

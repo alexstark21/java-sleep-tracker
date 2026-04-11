@@ -9,8 +9,8 @@ public class SleepLessNightsCounterFunction implements Function<List<SleepingSes
 
     public static final String SLEEPLESS_MESSAGE = "Количество бессонных ночей";
 
-    private static final LocalTime NOON = LocalTime.of(12, 0);
-    private static final LocalTime NIGHT_END = LocalTime.of(6, 0);
+    public static final LocalTime NOON = LocalTime.of(12, 0);
+    public static final LocalTime NIGHT_END = LocalTime.of(6, 0);
 
     @Override
     public SleepAnalysisResult<Long> apply(List<SleepingSession> sessions) {
